@@ -1,60 +1,40 @@
-# swagger-java-client
+# gf-api-java-client
 
 ## Requirements
 
-Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
+Building the API client library requires Java 7 and Gradle to be installed.
 
-## Installation
+## Golfbert API Documentation
 
-To install the API client library to your local Maven repository, simply execute:
+The full Golfbert API documentation can be found [here](https://golfbert.com/docs).
+
+## Introduction
+
+This is a Java-based sample project generated using the Golfbert API Swagger definition file which can be found [here](https://golfbert.com/docs/swagger.yml). Post-code-generation, we added code in order to sign the requests using the [AWS Signature V4](http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) specification. ALL Golfbert API requests must be authenticated using this method. 
+
+### Get Started
+
+The project exhibits the functionality of the Golfbert API using JUnit tests. The tests are all included within file:
+
+```java
+test.java.io.swagger.client.api.DefaultApiTest.java
+```
+
+Before you get started, you MUST enter your AccessKey, SecretToken and API Key that you received from Golfbert. If you are just trying things out, contact sales@golfbert.com for trial credentials. Enter the information in:
+
+```java
+main.java.io.swagger.client.Configuration.java
+```
+
+Once you've entered your particular information, you can compile and run the tests by executing the following in a terminal window:
 
 ```shell
-mvn install
+gradle build
 ```
 
-To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
+## Transition to a Java application
 
-```shell
-mvn deploy
-```
-
-Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
-
-### Maven users
-
-Add this dependency to your project's POM:
-
-```xml
-<dependency>
-    <groupId>io.swagger</groupId>
-    <artifactId>swagger-java-client</artifactId>
-    <version>1.0.0</version>
-    <scope>compile</scope>
-</dependency>
-```
-
-### Gradle users
-
-Add this dependency to your project's build file:
-
-```groovy
-compile "io.swagger:swagger-java-client:1.0.0"
-```
-
-### Others
-
-At first generate the JAR by executing:
-
-    mvn package
-
-Then manually install the following JARs:
-
-* target/swagger-java-client-1.0.0.jar
-* target/lib/*.jar
-
-## Getting Started
-
-Please follow the [installation](#installation) instruction and execute the following Java code:
+Please follow the [Get Started](#Get Started) first. Once you are comfortable with that, you can create a main() method and populate it with something that looks like this:
 
 ```java
 
@@ -120,16 +100,6 @@ Class | Method | HTTP request | Description
  - [Scorecard](docs/Scorecard.md)
 
 
-## Documentation for Authorization
-
-All endpoints do not require authorization.
-Authentication schemes defined for the API:
-
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issue.
-
-## Author
-
-
-
