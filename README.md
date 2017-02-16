@@ -10,7 +10,7 @@ The full Golfbert API documentation can be found [here](https://golfbert.com/doc
 
 ## Introduction
 
-This is a Java-based sample project generated using the Golfbert API Swagger definition file which can be found [here](https://golfbert.com/docs/swagger.yml). Post-code-generation, we added code in order to sign the requests using the [AWS Signature V4](http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) specification. ALL Golfbert API requests must be authenticated using this method. 
+This is a Java-based sample project generated using the Golfbert API Swagger definition file which can be found [here](https://golfbert.com/docs/swagger.yml). Post-code-generation, we added code in order to sign the requests using the [AWS Signature V4](http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) specification. There are many libraries available that perform this specific type of signing for you. In our example, we used the one by Vicky Thakor and javaQuery which provides a very [detailed explanation](http://www.javaquery.com/2016/01/aws-version-4-signing-process-complete.html). ALL Golfbert API requests must be authenticated using this method. 
 
 ### Get Started
 
