@@ -26,6 +26,16 @@ Before you get started, you MUST enter your AccessKey, SecretToken and API Key t
 main.java.io.swagger.client.Configuration.java
 ```
 
+and more precisely here:
+
+```java
+
+public class Configuration {
+    final static String ACCESS_KEY = "<INSERT YOUR ACCESS KEY>";
+    final static String KEY_SECRET = "<INSERT YOUR KEY SECRET>";
+    final static String API_KEY = "<INSERT YOUR API KEY>";
+}
+```
 Once you've entered your particular information, you can compile and run the tests by executing the following in a terminal window:
 
 ```shell
