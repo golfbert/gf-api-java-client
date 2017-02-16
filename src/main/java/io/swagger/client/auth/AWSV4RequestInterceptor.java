@@ -19,36 +19,49 @@ import io.swagger.client.Pair;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.List;
-
+import java.net.URLDecoder;
 import java.io.IOException;
 
 /** This interceptor compresses the HTTP request body. Many webservers can't handle this! */
 public class AWSV4RequestInterceptor implements Interceptor {
-  @Override public Response intercept(Interceptor.Chain chain) throws IOException {
-    System.out.println("intercepted");
+  String accessKey;
+  String accessSecret;
 
-    String accessKey = "";
-    String accessSecret = "";
-    String region = "us-east-1";
-    String service = "execute-api";
-    String method = "GET";
-    String canonicalURI = "/v1/courses/";
-    String body = null;
+  public void setAccessKey(String accessKey) {
+    this.accessKey = accessKey;
+  }
+
+  public void setKeySecret(String keySecret) {
+    this.accessSecret = keySecret;
+  }
+
+  @Override public Response intercept(Interceptor.Chain chain) throws IOException {
+    final String region = "us-east-1";
+    final String service = "execute-api";
 
     Request originalRequest = chain.request();
 
-    TreeMap<String, String> qParams = new TreeMap<String, String>();
+    String method = originalRequest.method(); // GET
+    String canonicalURI = originalRequest.url().getPath(); //"/v1/courses/"
+    String bodyStr = null;
 
-    TreeMap<String, String> awsHeaders = new TreeMap<String, String>();
-    //awsHeaders.put("host", "api.golfbert.com");
+    String urlQuery = originalRequest.url().getQuery();
+    TreeMap<String, String> newQueryParams = new TreeMap<String, String>();
+    if(urlQuery != null) {
+      for(String qToken : urlQuery.split("&")) {
+        int idx = qToken.indexOf("=");
 
-    for(Map.Entry<String,List<String>> entrySet : originalRequest.headers().toMultimap().entrySet()) {
-      System.out.println("headers: " + entrySet.getKey() + " - " + entrySet.getValue().get(0));
-
-      awsHeaders.put(entrySet.getKey(), entrySet.getValue().get(0));
+        newQueryParams.put(
+            URLDecoder.decode(qToken.substring(0, idx), "UTF-8"),
+            URLDecoder.decode(qToken.substring(idx + 1), "UTF-8")
+            );
+      }
     }
 
-    String bodyStr = null;
+    TreeMap<String, String> newHeaders = new TreeMap<String, String>();
+    for(Map.Entry<String,List<String>> entrySet : originalRequest.headers().toMultimap().entrySet()) {
+      newHeaders.put(entrySet.getKey(), entrySet.getValue().get(0));
+    }
 
     if(originalRequest.body() != null) {
       try {
@@ -56,10 +69,8 @@ public class AWSV4RequestInterceptor implements Interceptor {
         final Buffer buffer = new Buffer();
         copy.body().writeTo(buffer);
         bodyStr = buffer.readUtf8();
-
-        System.out.println("body: " + bodyStr);
       } catch (final IOException e) {
-        System.out.println("error in reading body");
+        // maybe you should do something here?
       }
     }
 
@@ -68,11 +79,12 @@ public class AWSV4RequestInterceptor implements Interceptor {
                                                .serviceName(service) // es - elastic search. use your service name
                                                .httpMethodName(method) //GET, PUT, POST, DELETE, etc...
                                                .canonicalURI(canonicalURI) //end point
-                                               .queryParametes(qParams) //query parameters if any
-                                               .awsHeaders(awsHeaders) //aws header parameters
+                                               .queryParametes(newQueryParams) //query parameters if any
+                                               .awsHeaders(newHeaders) //aws header parameters
                                                .payload(bodyStr) // payload if any
-                                               .debug() // turn on the debug mode
                                                .build();
+                                               //.debug() // turn on the debug mode
+
 
     Request.Builder reqBuild = originalRequest.newBuilder();
 
@@ -82,9 +94,6 @@ public class AWSV4RequestInterceptor implements Interceptor {
       String key = entrySet.getKey();
       String value = entrySet.getValue();
 
-      System.out.println("put key: " + key + " value: " + value);
-
-      //headerParams.put(key, value);
       reqBuild = reqBuild.header(key, value);
     }
 

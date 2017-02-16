@@ -25,9 +25,26 @@
 
 package io.swagger.client;
 
+
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-14T22:26:07.934-08:00")
 public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+    final static String ACCESS_KEY = "<INSERT YOUR ACCESS KEY>";
+    final static String KEY_SECRET = "<INSERT YOUR KEY SECRET>";
+    final static String API_KEY = "<INSERT YOUR API KEY>";
+
+    private static ApiClient defaultApiClient = initApiClient();
+
+    private static ApiClient initApiClient() {
+      ApiClient ap = new ApiClient();
+
+      ap.setAccessKey(ACCESS_KEY);
+      ap.setKeySecret(KEY_SECRET);
+      ap.addDefaultHeader("x-api-key", API_KEY);
+
+      //ap.setDebugging(true);
+
+      return ap;
+    }
 
     /**
      * Get the default API client, which would be used when creating API

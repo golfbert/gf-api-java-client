@@ -43,7 +43,7 @@ public class AWSV4Auth {
         private TreeMap<String, String> queryParametes;
         private TreeMap<String, String> awsHeaders;
         private String payload;
-        private boolean debug = true;
+        private boolean debug = false;
 
         public Builder(String accessKeyID, String secretAccessKey) {
             this.accessKeyID = accessKeyID;
@@ -149,9 +149,13 @@ public class AWSV4Auth {
         StringBuilder queryString = new StringBuilder("");
         if (queryParametes != null && !queryParametes.isEmpty()) {
             for (Map.Entry<String, String> entrySet : queryParametes.entrySet()) {
+                if(queryString.length() > 0) {
+                  queryString.append("&");
+                }
+
                 String key = entrySet.getKey();
                 String value = entrySet.getValue();
-                queryString.append(key).append("=").append(URLEncoder.encode(value)).append("&");
+                queryString.append(key).append("=").append(URLEncoder.encode(value));
             }
             queryString.append("\n");
         } else {

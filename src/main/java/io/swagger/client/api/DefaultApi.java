@@ -55,7 +55,6 @@ import java.util.Map;
 
 public class DefaultApi {
     private ApiClient apiClient;
-    private String apiKey = "ROSeXCxRp90PZw6sYc3a2ZTPO8VWcWF2a5zOWbm0";
 
     public DefaultApi() {
         this(Configuration.getDefaultApiClient());
@@ -96,13 +95,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -203,13 +202,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -310,13 +309,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -417,13 +416,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -504,7 +503,6 @@ public class DefaultApi {
     private com.squareup.okhttp.Call listCoursesCall(Integer limit, Integer marker, String name, String city, String state, String zipcode, Double lat, Double _long, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
-
         // create path and map variables
         String localVarPath = "/courses/".replaceAll("\\{format\\}","json");
 
@@ -534,14 +532,12 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        //if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        //localVarHeaderParams.put("Content-Type", localVarContentType);
-        localVarHeaderParams.put("x-api-key", apiKey);
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -657,13 +653,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -766,13 +762,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -879,13 +875,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -986,13 +982,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -1087,13 +1083,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -1199,13 +1195,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
@@ -1312,13 +1308,13 @@ public class DefaultApi {
             "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        // if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
 
         final String[] localVarContentTypes = {
             "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        
 
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {

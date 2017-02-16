@@ -126,7 +126,7 @@ public class ApiClient {
      */
     public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
-    private String basePath = "https://localhost";
+    private String basePath = "https://api.golfbert.com/v1";
     private boolean lenientOnJson = false;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -175,20 +175,41 @@ public class ApiClient {
         // Set default User-Agent.
         //setUserAgent("Swagger-Codegen/1.0.0/java");
 
-        httpClient.interceptors().add(new AWSV4RequestInterceptor());
+        awsInterceptor = new AWSV4RequestInterceptor();
+
+        httpClient.interceptors().add(awsInterceptor);
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
-        //authentications.put("awsv4", new AwsSignatureV4());
 
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
+
+        addDefaultHeader("host", "api.golfbert.com");
+    }
+
+    /**
+     * Set Access Key
+     *
+     * @param accessKey the AWS IAM Access Key
+     */
+    public void setAccessKey(String accessKey) {
+        awsInterceptor.setAccessKey(accessKey);
+    }
+
+    /**
+     * Set Key Secret
+     *
+     * @param keySecret the AWS IAM key secret
+     */
+    public void setKeySecret(String keySecret) {
+        awsInterceptor.setKeySecret(keySecret);
     }
 
     /**
      * Get base path
      *
-     * @return Baes path
+     * @return Base path
      */
     public String getBasePath() {
         return basePath;
@@ -1096,7 +1117,6 @@ public class ApiClient {
 
         RequestBody reqBody;
         if (!HttpMethod.permitsRequestBody(method)) {
-            System.out.println("reqBody = null;");
             reqBody = null;
         } else if ("application/x-www-form-urlencoded".equals(contentType)) {
             reqBody = buildRequestBodyFormEncoding(formParams);
@@ -1111,7 +1131,6 @@ public class ApiClient {
                 reqBody = RequestBody.create(MediaType.parse(contentType), "");
             }
         } else {
-            System.out.println("reqBody = serialize(body, contentType);");
             reqBody = serialize(body, contentType);
         }
 
@@ -1123,8 +1142,6 @@ public class ApiClient {
         } else {
             request = reqBuilder.method(method, reqBody).build();
         }
-
-        System.out.println("BLAH: " + request.headers("Content-Type"));
 
         return httpClient.newCall(request);
     }
@@ -1168,7 +1185,6 @@ public class ApiClient {
      */
     public void processHeaderParams(Map<String, String> headerParams, Request.Builder reqBuilder) {
         for (Entry<String, String> param : headerParams.entrySet()) {
-            System.out.println("reqBuilder: " + param.getKey() + " value: " + param.getValue());
             reqBuilder.header(param.getKey(), parameterToString(param.getValue()));
         }
         for (Entry<String, String> header : defaultHeaderMap.entrySet()) {

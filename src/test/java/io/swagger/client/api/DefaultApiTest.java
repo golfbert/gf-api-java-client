@@ -51,19 +51,10 @@ import java.nio.charset.StandardCharsets;
  */
 public class DefaultApiTest {
 
-    private DefaultApi api;
+    private DefaultApi api = new DefaultApi();
 
     @Before
     public void setUp() {
-        ApiClient awsApiClient = new ApiClient();
-        //awsApiClient.setBasePath("http://localhost:10010");
-        awsApiClient.setBasePath("https://api.golfbert.com/v1");
-        //awsApiClient.setAccessKey("");
-        //awsApiClient.setAccessSecret("");
-        awsApiClient.addDefaultHeader("host", "api.golfbert.com");
-        awsApiClient.setDebugging(true);
-
-        api = new DefaultApi(awsApiClient);
     }
 
     /**
@@ -76,10 +67,11 @@ public class DefaultApiTest {
      */
     @Test
     public void getCourseTest() throws ApiException {
-        Integer id = null;
-        // Course response = api.getCourse(id);
+        Integer id = 4;
 
-        // TODO: test validations
+        Course response = api.getCourse(id);
+
+        System.out.println("getCourse - name: " + response.getName());
     }
 
     /**
@@ -140,7 +132,7 @@ public class DefaultApiTest {
      */
     @Test
     public void listCoursesTest() throws ApiException {
-        Integer limit = null;
+        Integer limit = 5;
         Integer marker = null;
         String name = null;
         String city = null;
@@ -152,7 +144,7 @@ public class DefaultApiTest {
         List<Course> response = api.listCourses(limit, marker, name, city, state, zipcode, lat, _long);
 
         for(Course course: response) {
-          System.out.println("course: " + course.getName());
+          System.out.println("listCourses - id: " + course.getId() + ", name: " + course.getName());
         }
     }
 
