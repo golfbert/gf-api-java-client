@@ -10,7 +10,7 @@ The full Golfbert API documentation can be found [here](https://golfbert.com/doc
 
 ## Introduction
 
-This is a Java-based sample project generated using the Golfbert API Swagger definition file which can be found [here](https://golfbert.com/docs/swagger.yml). Post-code-generation, we added code in order to sign the requests using the [AWS Signature V4](http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) specification. There are many libraries available that perform this specific type of signing for you. In our example, we used the one by Vicky Thakor and javaQuery which provides a very [detailed explanation](http://www.javaquery.com/2016/01/aws-version-4-signing-process-complete.html). ALL Golfbert API requests must be authenticated using this method. 
+This is a Java-based sample project generated using the Golfbert API Swagger definition file which can be found [here](https://golfbert.com/docs/swagger.yml). Post-code-generation, we added code in order to sign the requests using the [AWS Signature V4](http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) specification. There are many libraries available that perform this specific type of signing for you. In our example, we used the one by Vicky Thakor and javaQuery which provides a very [detailed explanation](http://www.javaquery.com/2016/01/aws-version-4-signing-process-complete.html). ALL Golfbert API requests must be authenticated using this method.
 
 ### Get Started
 
@@ -59,7 +59,7 @@ import java.util.*;
 public class DefaultApiExample {
 
     public static void main(String[] args) {
-        
+
         DefaultApi apiInstance = new DefaultApi();
         Integer id = 56; // Integer | the id of the course whose information to be returned
         try {
@@ -76,22 +76,22 @@ public class DefaultApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.golfbert.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**getCourse**](docs/DefaultApi.md#getCourse) | **GET** /courses/{id} | v1/courses/_id_
-*DefaultApi* | [**getHole**](docs/DefaultApi.md#getHole) | **GET** /holes/{id} | v1/holes/_id_
-*DefaultApi* | [**getScorecard**](docs/DefaultApi.md#getScorecard) | **GET** /courses/{id}/scorecard | v1/courses/_id_/scorecard
-*DefaultApi* | [**listCourseTeeboxesForCourse**](docs/DefaultApi.md#listCourseTeeboxesForCourse) | **GET** /courses/{id}/teeboxes | v1/courses/_id_/teeboxes
-*DefaultApi* | [**listCourses**](docs/DefaultApi.md#listCourses) | **GET** /courses/ | v1/courses
-*DefaultApi* | [**listFlagColors**](docs/DefaultApi.md#listFlagColors) | **GET** /teeboxcolors | v1/teeboxcolors
-*DefaultApi* | [**listHoles**](docs/DefaultApi.md#listHoles) | **GET** /holes/ | v1/holes
-*DefaultApi* | [**listHolesForCourse**](docs/DefaultApi.md#listHolesForCourse) | **GET** /courses/{id}/holes | v1/courses/_id_/holes
-*DefaultApi* | [**listPolygonsForHole**](docs/DefaultApi.md#listPolygonsForHole) | **GET** /holes/{id}/polygons | v1/holes/_id_/polygons
-*DefaultApi* | [**listTeeboxTypes**](docs/DefaultApi.md#listTeeboxTypes) | **GET** /teeboxtypes | v1/teeboxtypes
-*DefaultApi* | [**listTeeboxesForHole**](docs/DefaultApi.md#listTeeboxesForHole) | **GET** /holes/{id}/teeboxes | v1/holes/_id_/teeboxes
-*DefaultApi* | [**ping**](docs/DefaultApi.md#ping) | **GET** /ping | v1/ping
+*DefaultApi* | [**getCourse**](docs/DefaultApi.md#getCourse) | **GET** /v1/courses/{id} | v1/courses/_id_
+*DefaultApi* | [**getHole**](docs/DefaultApi.md#getHole) | **GET** /v1/holes/{id} | v1/holes/_id_
+*DefaultApi* | [**getScorecard**](docs/DefaultApi.md#getScorecard) | **GET** /v1/courses/{id}/scorecard | v1/courses/_id_/scorecard
+*DefaultApi* | [**listCourseTeeboxesForCourse**](docs/DefaultApi.md#listCourseTeeboxesForCourse) | **GET** /v1/courses/{id}/teeboxes | v1/courses/_id_/teeboxes
+*DefaultApi* | [**listCourses**](docs/DefaultApi.md#listCourses) | **GET** /v1courses/ | v1/courses
+*DefaultApi* | [**listFlagColors**](docs/DefaultApi.md#listFlagColors) | **GET** /v1/teeboxcolors | v1/teeboxcolors
+*DefaultApi* | [**listHoles**](docs/DefaultApi.md#listHoles) | **GET** /v1/holes/ | v1/holes
+*DefaultApi* | [**listHolesForCourse**](docs/DefaultApi.md#listHolesForCourse) | **GET** /v1/courses/{id}/holes | v1/courses/_id_/holes
+*DefaultApi* | [**listPolygonsForHole**](docs/DefaultApi.md#listPolygonsForHole) | **GET** /v1/holes/{id}/polygons | v1/holes/_id_/polygons
+*DefaultApi* | [**listTeeboxTypes**](docs/DefaultApi.md#listTeeboxTypes) | **GET** /v1/teeboxtypes | v1/teeboxtypes
+*DefaultApi* | [**listTeeboxesForHole**](docs/DefaultApi.md#listTeeboxesForHole) | **GET** /v1/holes/{id}/teeboxes | v1/holes/_id_/teeboxes
+*DefaultApi* | [**ping**](docs/DefaultApi.md#ping) | **GET** /ping | ping
 
 
 ## Documentation for Models
