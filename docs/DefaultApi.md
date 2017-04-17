@@ -1,28 +1,28 @@
 # DefaultApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://api.golfbert.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCourse**](DefaultApi.md#getCourse) | **GET** /courses/{id} | v1/courses/_id_
-[**getHole**](DefaultApi.md#getHole) | **GET** /holes/{id} | v1/holes/_id_
-[**getScorecard**](DefaultApi.md#getScorecard) | **GET** /courses/{id}/scorecard | v1/courses/_id_/scorecard
-[**listCourseTeeboxesForCourse**](DefaultApi.md#listCourseTeeboxesForCourse) | **GET** /courses/{id}/teeboxes | v1/courses/_id_/teeboxes
-[**listCourses**](DefaultApi.md#listCourses) | **GET** /courses/ | v1/courses
-[**listFlagColors**](DefaultApi.md#listFlagColors) | **GET** /teeboxcolors | v1/teeboxcolors
-[**listHoles**](DefaultApi.md#listHoles) | **GET** /holes/ | v1/holes
-[**listHolesForCourse**](DefaultApi.md#listHolesForCourse) | **GET** /courses/{id}/holes | v1/courses/_id_/holes
-[**listPolygonsForHole**](DefaultApi.md#listPolygonsForHole) | **GET** /holes/{id}/polygons | v1/holes/_id_/polygons
-[**listTeeboxTypes**](DefaultApi.md#listTeeboxTypes) | **GET** /teeboxtypes | v1/teeboxtypes
-[**listTeeboxesForHole**](DefaultApi.md#listTeeboxesForHole) | **GET** /holes/{id}/teeboxes | v1/holes/_id_/teeboxes
-[**ping**](DefaultApi.md#ping) | **GET** /ping | v1/ping
+[**getCourse**](DefaultApi.md#getCourse) | **GET** /v1/courses/{id} | v1/courses/{id}
+[**getHole**](DefaultApi.md#getHole) | **GET** /v1/holes/{id} | v1/holes/{id}
+[**getScorecard**](DefaultApi.md#getScorecard) | **GET** /v1/courses/{id}/scorecard | v1/courses/{id}/scorecard
+[**listCourseTeeboxesForCourse**](DefaultApi.md#listCourseTeeboxesForCourse) | **GET** /v1/courses/{id}/teeboxes | v1/courses/{id}/teeboxes
+[**listCourses**](DefaultApi.md#listCourses) | **GET** /v1/courses/ | v1/courses
+[**listFlagColors**](DefaultApi.md#listFlagColors) | **GET** /v1/teeboxcolors | v1/teeboxcolors
+[**listHoles**](DefaultApi.md#listHoles) | **GET** /v1/holes/ | v1/holes
+[**listHolesForCourse**](DefaultApi.md#listHolesForCourse) | **GET** /v1/courses/{id}/holes | v1/courses/{id}/holes
+[**listPolygonsForHole**](DefaultApi.md#listPolygonsForHole) | **GET** /v1/holes/{id}/polygons | v1/holes/{id}/polygons
+[**listTeeboxTypes**](DefaultApi.md#listTeeboxTypes) | **GET** /v1/teeboxtypes | v1/teeboxtypes
+[**listTeeboxesForHole**](DefaultApi.md#listTeeboxesForHole) | **GET** /v1/holes/{id}/teeboxes | v1/holes/{id}/teeboxes
+[**ping**](DefaultApi.md#ping) | **GET** /status | v1/ping
 
 
 <a name="getCourse"></a>
 # **getCourse**
 > Course getCourse(id)
 
-v1/courses/_id_
+v1/courses/{id}
 
 Retrieves a course&#39;s details. This call expands on the information returned by the course listings call.
 
@@ -67,7 +67,7 @@ No authorization required
 # **getHole**
 > Hole getHole(id)
 
-v1/holes/_id_
+v1/holes/{id}
 
 Retrieves a hole&#39;s details including geo information
 
@@ -112,7 +112,7 @@ No authorization required
 # **getScorecard**
 > Scorecard getScorecard(id)
 
-v1/courses/_id_/scorecard
+v1/courses/{id}/scorecard
 
 Retrieves a course&#39;s scorecard. An example of information returned can be found [here.](http://golfbert.com/courses/scorecard/17078)
 
@@ -155,9 +155,9 @@ No authorization required
 
 <a name="listCourseTeeboxesForCourse"></a>
 # **listCourseTeeboxesForCourse**
-> List&lt;Courseteebox&gt; listCourseTeeboxesForCourse(id)
+> Listofcourseteeboxes listCourseTeeboxesForCourse(id)
 
-v1/courses/_id_/teeboxes
+v1/courses/{id}/teeboxes
 
 Retrieves a course&#39;s teeboxes.
 
@@ -171,7 +171,7 @@ Retrieves a course&#39;s teeboxes.
 DefaultApi apiInstance = new DefaultApi();
 Integer id = 56; // Integer | the course id
 try {
-    List<Courseteebox> result = apiInstance.listCourseTeeboxesForCourse(id);
+    Listofcourseteeboxes result = apiInstance.listCourseTeeboxesForCourse(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#listCourseTeeboxesForCourse");
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Courseteebox&gt;**](Courseteebox.md)
+[**Listofcourseteeboxes**](Listofcourseteeboxes.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ No authorization required
 
 <a name="listCourses"></a>
 # **listCourses**
-> List&lt;Course&gt; listCourses(limit, marker, name, city, state, zipcode, lat, _long)
+> Listofcourses listCourses(limit, marker, name, city, state, zipcode, lat, _long)
 
 v1/courses
 
@@ -223,7 +223,7 @@ String zipcode = "zipcode_example"; // String | return only courses within given
 Double lat = 3.4D; // Double | return only courses within given latitude and longitude. The params lat and long must be specified together otherwise the api will fail
 Double _long = 3.4D; // Double | return only courses within given latitude and longitude. The params lat and long must be specified together otherwise the api will fail
 try {
-    List<Course> result = apiInstance.listCourses(limit, marker, name, city, state, zipcode, lat, _long);
+    Listofcourses result = apiInstance.listCourses(limit, marker, name, city, state, zipcode, lat, _long);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#listCourses");
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Course&gt;**](Course.md)
+[**Listofcourses**](Listofcourses.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ No authorization required
 
 <a name="listFlagColors"></a>
 # **listFlagColors**
-> List&lt;String&gt; listFlagColors()
+> Listofteeboxcolors listFlagColors()
 
 v1/teeboxcolors
 
@@ -274,7 +274,7 @@ Retrieves all available teebox colors
 
 DefaultApi apiInstance = new DefaultApi();
 try {
-    List<String> result = apiInstance.listFlagColors();
+    Listofteeboxcolors result = apiInstance.listFlagColors();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#listFlagColors");
@@ -287,7 +287,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**List&lt;String&gt;**
+[**Listofteeboxcolors**](Listofteeboxcolors.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ No authorization required
 
 <a name="listHoles"></a>
 # **listHoles**
-> List&lt;Hole&gt; listHoles(courseId, limit, marker)
+> Listofholes listHoles(courseId, limit, marker)
 
 v1/holes
 
@@ -318,7 +318,7 @@ Integer courseId = 56; // Integer | the course whose holes to return
 Integer limit = 18; // Integer | maximum number of results to return
 Integer marker = 1; // Integer | marker of where to start returning results (in this case hole number)
 try {
-    List<Hole> result = apiInstance.listHoles(courseId, limit, marker);
+    Listofholes result = apiInstance.listHoles(courseId, limit, marker);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#listHoles");
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Hole&gt;**](Hole.md)
+[**Listofholes**](Listofholes.md)
 
 ### Authorization
 
@@ -349,9 +349,9 @@ No authorization required
 
 <a name="listHolesForCourse"></a>
 # **listHolesForCourse**
-> List&lt;Hole&gt; listHolesForCourse(id)
+> Listofholes listHolesForCourse(id)
 
-v1/courses/_id_/holes
+v1/courses/{id}/holes
 
 Retrieves a course&#39;s holes&#39; information.
 
@@ -365,7 +365,7 @@ Retrieves a course&#39;s holes&#39; information.
 DefaultApi apiInstance = new DefaultApi();
 Integer id = 56; // Integer | the course id whose holes info to return
 try {
-    List<Hole> result = apiInstance.listHolesForCourse(id);
+    Listofholes result = apiInstance.listHolesForCourse(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#listHolesForCourse");
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Hole&gt;**](Hole.md)
+[**Listofholes**](Listofholes.md)
 
 ### Authorization
 
@@ -394,9 +394,9 @@ No authorization required
 
 <a name="listPolygonsForHole"></a>
 # **listPolygonsForHole**
-> List&lt;Holepolygon&gt; listPolygonsForHole(id)
+> Listofholepolygons listPolygonsForHole(id)
 
-v1/holes/_id_/polygons
+v1/holes/{id}/polygons
 
 Retrieves a holes&#39;s polygons. This information can be used to render the hole accurately on top of a map.
 
@@ -410,7 +410,7 @@ Retrieves a holes&#39;s polygons. This information can be used to render the hol
 DefaultApi apiInstance = new DefaultApi();
 Integer id = 56; // Integer | the hole id
 try {
-    List<Holepolygon> result = apiInstance.listPolygonsForHole(id);
+    Listofholepolygons result = apiInstance.listPolygonsForHole(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#listPolygonsForHole");
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Holepolygon&gt;**](Holepolygon.md)
+[**Listofholepolygons**](Listofholepolygons.md)
 
 ### Authorization
 
@@ -439,7 +439,7 @@ No authorization required
 
 <a name="listTeeboxTypes"></a>
 # **listTeeboxTypes**
-> List&lt;String&gt; listTeeboxTypes()
+> Listofteeboxtypes listTeeboxTypes()
 
 v1/teeboxtypes
 
@@ -454,7 +454,7 @@ Retrieves all available teebox types. This serves as an enum of all available te
 
 DefaultApi apiInstance = new DefaultApi();
 try {
-    List<String> result = apiInstance.listTeeboxTypes();
+    Listofteeboxtypes result = apiInstance.listTeeboxTypes();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#listTeeboxTypes");
@@ -467,7 +467,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**List&lt;String&gt;**
+[**Listofteeboxtypes**](Listofteeboxtypes.md)
 
 ### Authorization
 
@@ -480,9 +480,9 @@ No authorization required
 
 <a name="listTeeboxesForHole"></a>
 # **listTeeboxesForHole**
-> List&lt;Holeteebox&gt; listTeeboxesForHole(id, color, teeboxtype, par, handicap)
+> Listofholeteeboxes listTeeboxesForHole(id, color, teeboxtype, par, handicap)
 
-v1/holes/_id_/teeboxes
+v1/holes/{id}/teeboxes
 
 Retrieves a holes&#39;s teeboxes.
 
@@ -500,7 +500,7 @@ String teeboxtype = "teeboxtype_example"; // String | teebox type to filter by
 Integer par = 56; // Integer | only show holes with a specific par
 Integer handicap = 56; // Integer | only show holes with a specific handicap
 try {
-    List<Holeteebox> result = apiInstance.listTeeboxesForHole(id, color, teeboxtype, par, handicap);
+    Listofholeteeboxes result = apiInstance.listTeeboxesForHole(id, color, teeboxtype, par, handicap);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#listTeeboxesForHole");
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Holeteebox&gt;**](Holeteebox.md)
+[**Listofholeteeboxes**](Listofholeteeboxes.md)
 
 ### Authorization
 
@@ -533,7 +533,7 @@ No authorization required
 
 <a name="ping"></a>
 # **ping**
-> PingResponse ping()
+> Ping ping()
 
 v1/ping
 
@@ -548,7 +548,7 @@ Pings the Golfbert API to determine status. A 200-type of response signifies suc
 
 DefaultApi apiInstance = new DefaultApi();
 try {
-    PingResponse result = apiInstance.ping();
+    Ping result = apiInstance.ping();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DefaultApi#ping");
@@ -561,7 +561,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**PingResponse**](PingResponse.md)
+[**Ping**](Ping.md)
 
 ### Authorization
 

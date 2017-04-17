@@ -34,6 +34,8 @@ import io.swagger.client.model.Courseteebox;
 import io.swagger.client.model.Holepolygon;
 import io.swagger.client.model.Holeteebox;
 import io.swagger.client.model.PingResponse;
+import io.swagger.client.model.Listofcourses;
+
 import org.junit.Test;
 import org.junit.Before;
 
@@ -141,9 +143,9 @@ public class DefaultApiTest {
         Double lat = null;
         Double _long = null;
 
-        List<Course> response = api.listCourses(limit, marker, name, city, state, zipcode, lat, _long);
+        Listofcourses response = api.listCourses(limit, marker, name, city, state, zipcode, lat, _long);
 
-        for(Course course: response) {
+        for(Course course: response.getResources()) {
           System.out.println("listCourses - id: " + course.getId() + ", name: " + course.getName());
         }
     }

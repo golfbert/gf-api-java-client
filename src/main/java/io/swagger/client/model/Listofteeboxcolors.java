@@ -29,53 +29,39 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * Holedimensions
+ * Listofteeboxcolors
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-16T22:14:27.256-07:00")
-public class Holedimensions   {
-  @SerializedName("width")
-  private Integer width = null;
+public class Listofteeboxcolors   {
+  @SerializedName("resources")
+  private List<String> resources = new ArrayList<String>();
 
-  @SerializedName("height")
-  private Integer height = null;
+  public Listofteeboxcolors resources(List<String> resources) {
+    this.resources = resources;
+    return this;
+  }
 
-  public Holedimensions width(Integer width) {
-    this.width = width;
+  public Listofteeboxcolors addResourcesItem(String resourcesItem) {
+    this.resources.add(resourcesItem);
     return this;
   }
 
    /**
-   * Get width
-   * @return width
+   * Get resources
+   * @return resources
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getWidth() {
-    return width;
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public List<String> getResources() {
+    return resources;
   }
 
-  public void setWidth(Integer width) {
-    this.width = width;
-  }
-
-  public Holedimensions height(Integer height) {
-    this.height = height;
-    return this;
-  }
-
-   /**
-   * Get height
-   * @return height
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getHeight() {
-    return height;
-  }
-
-  public void setHeight(Integer height) {
-    this.height = height;
+  public void setResources(List<String> resources) {
+    this.resources = resources;
   }
 
 
@@ -87,23 +73,21 @@ public class Holedimensions   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Holedimensions holedimensions = (Holedimensions) o;
-    return Objects.equals(this.width, holedimensions.width) &&
-        Objects.equals(this.height, holedimensions.height);
+    Listofteeboxcolors listofteeboxcolors = (Listofteeboxcolors) o;
+    return Objects.equals(this.resources, listofteeboxcolors.resources);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(width, height);
+    return Objects.hash(resources);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Holedimensions {\n");
+    sb.append("class Listofteeboxcolors {\n");
     
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
     sb.append("}");
     return sb.toString();
   }

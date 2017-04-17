@@ -29,53 +29,40 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.Hole;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * Holedimensions
+ * Listofholes
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-16T22:14:27.256-07:00")
-public class Holedimensions   {
-  @SerializedName("width")
-  private Integer width = null;
+public class Listofholes   {
+  @SerializedName("resources")
+  private List<Hole> resources = new ArrayList<Hole>();
 
-  @SerializedName("height")
-  private Integer height = null;
+  public Listofholes resources(List<Hole> resources) {
+    this.resources = resources;
+    return this;
+  }
 
-  public Holedimensions width(Integer width) {
-    this.width = width;
+  public Listofholes addResourcesItem(Hole resourcesItem) {
+    this.resources.add(resourcesItem);
     return this;
   }
 
    /**
-   * Get width
-   * @return width
+   * Get resources
+   * @return resources
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getWidth() {
-    return width;
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public List<Hole> getResources() {
+    return resources;
   }
 
-  public void setWidth(Integer width) {
-    this.width = width;
-  }
-
-  public Holedimensions height(Integer height) {
-    this.height = height;
-    return this;
-  }
-
-   /**
-   * Get height
-   * @return height
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getHeight() {
-    return height;
-  }
-
-  public void setHeight(Integer height) {
-    this.height = height;
+  public void setResources(List<Hole> resources) {
+    this.resources = resources;
   }
 
 
@@ -87,23 +74,21 @@ public class Holedimensions   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Holedimensions holedimensions = (Holedimensions) o;
-    return Objects.equals(this.width, holedimensions.width) &&
-        Objects.equals(this.height, holedimensions.height);
+    Listofholes listofholes = (Listofholes) o;
+    return Objects.equals(this.resources, listofholes.resources);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(width, height);
+    return Objects.hash(resources);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Holedimensions {\n");
+    sb.append("class Listofholes {\n");
     
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -32,50 +32,29 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 /**
- * Holedimensions
+ * Ping
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-16T22:14:27.256-07:00")
-public class Holedimensions   {
-  @SerializedName("width")
-  private Integer width = null;
+public class Ping   {
+  @SerializedName("message")
+  private String message = null;
 
-  @SerializedName("height")
-  private Integer height = null;
-
-  public Holedimensions width(Integer width) {
-    this.width = width;
+  public Ping message(String message) {
+    this.message = message;
     return this;
   }
 
    /**
-   * Get width
-   * @return width
+   * Get message
+   * @return message
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getWidth() {
-    return width;
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public String getMessage() {
+    return message;
   }
 
-  public void setWidth(Integer width) {
-    this.width = width;
-  }
-
-  public Holedimensions height(Integer height) {
-    this.height = height;
-    return this;
-  }
-
-   /**
-   * Get height
-   * @return height
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getHeight() {
-    return height;
-  }
-
-  public void setHeight(Integer height) {
-    this.height = height;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
 
@@ -87,23 +66,21 @@ public class Holedimensions   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Holedimensions holedimensions = (Holedimensions) o;
-    return Objects.equals(this.width, holedimensions.width) &&
-        Objects.equals(this.height, holedimensions.height);
+    Ping ping = (Ping) o;
+    return Objects.equals(this.message, ping.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(width, height);
+    return Objects.hash(message);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Holedimensions {\n");
+    sb.append("class Ping {\n");
     
-    sb.append("    width: ").append(toIndentedString(width)).append("\n");
-    sb.append("    height: ").append(toIndentedString(height)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
     return sb.toString();
   }
