@@ -49,11 +49,11 @@ import java.util.Map;
 import java.nio.charset.StandardCharsets;
 
 /**
- * API tests for DefaultApi
+ * API tests for GolfbertApi
  */
-public class DefaultApiTest {
+public class GolfbertApiTest {
 
-    private DefaultApi api = new DefaultApi();
+    private GolfbertApi api = new GolfbertApi();
 
     @Before
     public void setUp() {

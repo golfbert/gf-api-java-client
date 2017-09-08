@@ -1,21 +1,21 @@
-# DefaultApi
+# GolfbertApi
 
 All URIs are relative to *https://api.golfbert.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCourse**](DefaultApi.md#getCourse) | **GET** /v1/courses/{id} | v1/courses/{id}
-[**getHole**](DefaultApi.md#getHole) | **GET** /v1/holes/{id} | v1/holes/{id}
-[**getScorecard**](DefaultApi.md#getScorecard) | **GET** /v1/courses/{id}/scorecard | v1/courses/{id}/scorecard
-[**listCourseTeeboxesForCourse**](DefaultApi.md#listCourseTeeboxesForCourse) | **GET** /v1/courses/{id}/teeboxes | v1/courses/{id}/teeboxes
-[**listCourses**](DefaultApi.md#listCourses) | **GET** /v1/courses/ | v1/courses
-[**listFlagColors**](DefaultApi.md#listFlagColors) | **GET** /v1/teeboxcolors | v1/teeboxcolors
-[**listHoles**](DefaultApi.md#listHoles) | **GET** /v1/holes/ | v1/holes
-[**listHolesForCourse**](DefaultApi.md#listHolesForCourse) | **GET** /v1/courses/{id}/holes | v1/courses/{id}/holes
-[**listPolygonsForHole**](DefaultApi.md#listPolygonsForHole) | **GET** /v1/holes/{id}/polygons | v1/holes/{id}/polygons
-[**listTeeboxTypes**](DefaultApi.md#listTeeboxTypes) | **GET** /v1/teeboxtypes | v1/teeboxtypes
-[**listTeeboxesForHole**](DefaultApi.md#listTeeboxesForHole) | **GET** /v1/holes/{id}/teeboxes | v1/holes/{id}/teeboxes
-[**ping**](DefaultApi.md#ping) | **GET** /status | v1/ping
+[**getCourse**](GolfbertApi.md#getCourse) | **GET** /v1/courses/{id} | v1/courses/{id}
+[**getHole**](GolfbertApi.md#getHole) | **GET** /v1/holes/{id} | v1/holes/{id}
+[**getScorecard**](GolfbertApi.md#getScorecard) | **GET** /v1/courses/{id}/scorecard | v1/courses/{id}/scorecard
+[**listCourseTeeboxesForCourse**](GolfbertApi.md#listCourseTeeboxesForCourse) | **GET** /v1/courses/{id}/teeboxes | v1/courses/{id}/teeboxes
+[**listCourses**](GolfbertApi.md#listCourses) | **GET** /v1/courses/ | v1/courses
+[**listFlagColors**](GolfbertApi.md#listFlagColors) | **GET** /v1/teeboxcolors | v1/teeboxcolors
+[**listHoles**](GolfbertApi.md#listHoles) | **GET** /v1/holes/ | v1/holes
+[**listHolesForCourse**](GolfbertApi.md#listHolesForCourse) | **GET** /v1/courses/{id}/holes | v1/courses/{id}/holes
+[**listPolygonsForHole**](GolfbertApi.md#listPolygonsForHole) | **GET** /v1/holes/{id}/polygons | v1/holes/{id}/polygons
+[**listTeeboxTypes**](GolfbertApi.md#listTeeboxTypes) | **GET** /v1/teeboxtypes | v1/teeboxtypes
+[**listTeeboxesForHole**](GolfbertApi.md#listTeeboxesForHole) | **GET** /v1/holes/{id}/teeboxes | v1/holes/{id}/teeboxes
+[**ping**](GolfbertApi.md#ping) | **GET** /status | v1/ping
 
 
 <a name="getCourse"></a>
@@ -30,16 +30,16 @@ Retrieves a course&#39;s details. This call expands on the information returned 
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer id = 56; // Integer | the id of the course whose information to be returned
 try {
     Course result = apiInstance.getCourse(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#getCourse");
+    System.err.println("Exception when calling GolfbertApi#getCourse");
     e.printStackTrace();
 }
 ```
@@ -75,16 +75,16 @@ Retrieves a hole&#39;s details including geo information
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer id = 56; // Integer | the hole id
 try {
     Hole result = apiInstance.getHole(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#getHole");
+    System.err.println("Exception when calling GolfbertApi#getHole");
     e.printStackTrace();
 }
 ```
@@ -120,16 +120,16 @@ Retrieves a course&#39;s scorecard. An example of information returned can be fo
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer id = 56; // Integer | the course id whose scorecard to return
 try {
     Scorecard result = apiInstance.getScorecard(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#getScorecard");
+    System.err.println("Exception when calling GolfbertApi#getScorecard");
     e.printStackTrace();
 }
 ```
@@ -165,16 +165,16 @@ Retrieves a course&#39;s teeboxes.
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer id = 56; // Integer | the course id
 try {
     Listofcourseteeboxes result = apiInstance.listCourseTeeboxesForCourse(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#listCourseTeeboxesForCourse");
+    System.err.println("Exception when calling GolfbertApi#listCourseTeeboxesForCourse");
     e.printStackTrace();
 }
 ```
@@ -210,10 +210,10 @@ Retrieves a paginated list of courses. The request can be further parameterized 
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer limit = 10; // Integer | maximum number of results to return
 Integer marker = 0; // Integer | marker of where to start returning results (in this case course id)
 String name = "name_example"; // String | return only courses that match this name e.g. Torrey Pines
@@ -226,7 +226,7 @@ try {
     Listofcourses result = apiInstance.listCourses(limit, marker, name, city, state, zipcode, lat, _long);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#listCourses");
+    System.err.println("Exception when calling GolfbertApi#listCourses");
     e.printStackTrace();
 }
 ```
@@ -269,15 +269,15 @@ Retrieves all available teebox colors
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 try {
     Listofteeboxcolors result = apiInstance.listFlagColors();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#listFlagColors");
+    System.err.println("Exception when calling GolfbertApi#listFlagColors");
     e.printStackTrace();
 }
 ```
@@ -310,10 +310,10 @@ Retrieves a paginated list of holes.
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer courseId = 56; // Integer | the course whose holes to return
 Integer limit = 18; // Integer | maximum number of results to return
 Integer marker = 1; // Integer | marker of where to start returning results (in this case hole number)
@@ -321,7 +321,7 @@ try {
     Listofholes result = apiInstance.listHoles(courseId, limit, marker);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#listHoles");
+    System.err.println("Exception when calling GolfbertApi#listHoles");
     e.printStackTrace();
 }
 ```
@@ -359,16 +359,16 @@ Retrieves a course&#39;s holes&#39; information.
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer id = 56; // Integer | the course id whose holes info to return
 try {
     Listofholes result = apiInstance.listHolesForCourse(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#listHolesForCourse");
+    System.err.println("Exception when calling GolfbertApi#listHolesForCourse");
     e.printStackTrace();
 }
 ```
@@ -404,16 +404,16 @@ Retrieves a holes&#39;s polygons. This information can be used to render the hol
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer id = 56; // Integer | the hole id
 try {
     Listofholepolygons result = apiInstance.listPolygonsForHole(id);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#listPolygonsForHole");
+    System.err.println("Exception when calling GolfbertApi#listPolygonsForHole");
     e.printStackTrace();
 }
 ```
@@ -449,15 +449,15 @@ Retrieves all available teebox types. This serves as an enum of all available te
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 try {
     Listofteeboxtypes result = apiInstance.listTeeboxTypes();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#listTeeboxTypes");
+    System.err.println("Exception when calling GolfbertApi#listTeeboxTypes");
     e.printStackTrace();
 }
 ```
@@ -490,10 +490,10 @@ Retrieves a holes&#39;s teeboxes.
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 Integer id = 56; // Integer | the hole id
 String color = "color_example"; // String | teebox color to filter by
 String teeboxtype = "teeboxtype_example"; // String | teebox type to filter by
@@ -503,7 +503,7 @@ try {
     Listofholeteeboxes result = apiInstance.listTeeboxesForHole(id, color, teeboxtype, par, handicap);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#listTeeboxesForHole");
+    System.err.println("Exception when calling GolfbertApi#listTeeboxesForHole");
     e.printStackTrace();
 }
 ```
@@ -543,15 +543,15 @@ Pings the Golfbert API to determine status. A 200-type of response signifies suc
 ```java
 // Import classes:
 //import io.swagger.client.ApiException;
-//import io.swagger.client.api.DefaultApi;
+//import io.swagger.client.api.GolfbertApi;
 
 
-DefaultApi apiInstance = new DefaultApi();
+GolfbertApi apiInstance = new GolfbertApi();
 try {
     Ping result = apiInstance.ping();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#ping");
+    System.err.println("Exception when calling GolfbertApi#ping");
     e.printStackTrace();
 }
 ```

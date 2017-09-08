@@ -57,14 +57,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DefaultApi {
+public class GolfbertApi {
     private ApiClient apiClient;
 
-    public DefaultApi() {
-        this(Configuration.getDefaultApiClient());
+    public GolfbertApi() {
+        this(Configuration.getGolfbertApiClient());
     }
 
-    public DefaultApi(ApiClient apiClient) {
+    public GolfbertApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 

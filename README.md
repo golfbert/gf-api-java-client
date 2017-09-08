@@ -17,10 +17,10 @@ This is a Java-based sample project generated using the Golfbert API Swagger def
 The project exhibits the functionality of the Golfbert API using JUnit tests. The tests are all included within file:
 
 ```java
-test.java.io.swagger.client.api.DefaultApiTest.java
+test.java.io.swagger.client.api.GolfbertApiTest.java
 ```
 
-Before you get started, you MUST enter your AccessKey, SecretToken and API Key that you received from Golfbert. If you are just trying things out, contact sales@golfbert.com for trial credentials. Enter the information in:
+Before you get started, you MUST enter your AccessKey, SecretToken and API Key that you received from Golfbert. If you are just trying things out, go to http://golfbert.com/api for credentials. Enter the information in:
 
 ```java
 main.java.io.swagger.client.Configuration.java
@@ -41,6 +41,7 @@ Once you've entered your particular information, you can compile and run the tes
 ```shell
 gradle build
 ```
+The outcome of the test execution can be found in the subdirectory: build/test-results
 
 ## Transition to a Java application
 
@@ -51,22 +52,22 @@ Please follow the [Get Started](#Get Started) first. Once you are comfortable wi
 import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.DefaultApi;
+import io.swagger.client.api.GolfbertApi;
 
 import java.io.File;
 import java.util.*;
 
-public class DefaultApiExample {
+public class GolfbertApiExample {
 
     public static void main(String[] args) {
 
-        DefaultApi apiInstance = new DefaultApi();
+        GolfbertApi apiInstance = new GolfbertApi();
         Integer id = 56; // Integer | the id of the course whose information to be returned
         try {
             Course result = apiInstance.getCourse(id);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#getCourse");
+            System.err.println("Exception when calling GolfbertApi#getCourse");
             e.printStackTrace();
         }
     }
@@ -80,18 +81,18 @@ All URIs are relative to *https://api.golfbert.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultApi* | [**getCourse**](docs/DefaultApi.md#getCourse) | **GET** /v1/courses/{id} | v1/courses/_id_
-*DefaultApi* | [**getHole**](docs/DefaultApi.md#getHole) | **GET** /v1/holes/{id} | v1/holes/_id_
-*DefaultApi* | [**getScorecard**](docs/DefaultApi.md#getScorecard) | **GET** /v1/courses/{id}/scorecard | v1/courses/_id_/scorecard
-*DefaultApi* | [**listCourseTeeboxesForCourse**](docs/DefaultApi.md#listCourseTeeboxesForCourse) | **GET** /v1/courses/{id}/teeboxes | v1/courses/_id_/teeboxes
-*DefaultApi* | [**listCourses**](docs/DefaultApi.md#listCourses) | **GET** /v1courses/ | v1/courses
-*DefaultApi* | [**listFlagColors**](docs/DefaultApi.md#listFlagColors) | **GET** /v1/teeboxcolors | v1/teeboxcolors
-*DefaultApi* | [**listHoles**](docs/DefaultApi.md#listHoles) | **GET** /v1/holes/ | v1/holes
-*DefaultApi* | [**listHolesForCourse**](docs/DefaultApi.md#listHolesForCourse) | **GET** /v1/courses/{id}/holes | v1/courses/_id_/holes
-*DefaultApi* | [**listPolygonsForHole**](docs/DefaultApi.md#listPolygonsForHole) | **GET** /v1/holes/{id}/polygons | v1/holes/_id_/polygons
-*DefaultApi* | [**listTeeboxTypes**](docs/DefaultApi.md#listTeeboxTypes) | **GET** /v1/teeboxtypes | v1/teeboxtypes
-*DefaultApi* | [**listTeeboxesForHole**](docs/DefaultApi.md#listTeeboxesForHole) | **GET** /v1/holes/{id}/teeboxes | v1/holes/_id_/teeboxes
-*DefaultApi* | [**ping**](docs/DefaultApi.md#ping) | **GET** /ping | ping
+*GolfbertApi* | [**getCourse**](docs/GolfbertApi.md#getCourse) | **GET** /v1/courses/{id} | v1/courses/_id_
+*GolfbertApi* | [**getHole**](docs/GolfbertApi.md#getHole) | **GET** /v1/holes/{id} | v1/holes/_id_
+*GolfbertApi* | [**getScorecard**](docs/GolfbertApi.md#getScorecard) | **GET** /v1/courses/{id}/scorecard | v1/courses/_id_/scorecard
+*GolfbertApi* | [**listCourseTeeboxesForCourse**](docs/GolfbertApi.md#listCourseTeeboxesForCourse) | **GET** /v1/courses/{id}/teeboxes | v1/courses/_id_/teeboxes
+*GolfbertApi* | [**listCourses**](docs/GolfbertApi.md#listCourses) | **GET** /v1courses/ | v1/courses
+*GolfbertApi* | [**listFlagColors**](docs/GolfbertApi.md#listFlagColors) | **GET** /v1/teeboxcolors | v1/teeboxcolors
+*GolfbertApi* | [**listHoles**](docs/GolfbertApi.md#listHoles) | **GET** /v1/holes/ | v1/holes
+*GolfbertApi* | [**listHolesForCourse**](docs/GolfbertApi.md#listHolesForCourse) | **GET** /v1/courses/{id}/holes | v1/courses/_id_/holes
+*GolfbertApi* | [**listPolygonsForHole**](docs/GolfbertApi.md#listPolygonsForHole) | **GET** /v1/holes/{id}/polygons | v1/holes/_id_/polygons
+*GolfbertApi* | [**listTeeboxTypes**](docs/GolfbertApi.md#listTeeboxTypes) | **GET** /v1/teeboxtypes | v1/teeboxtypes
+*GolfbertApi* | [**listTeeboxesForHole**](docs/GolfbertApi.md#listTeeboxesForHole) | **GET** /v1/holes/{id}/teeboxes | v1/holes/_id_/teeboxes
+*GolfbertApi* | [**ping**](docs/GolfbertApi.md#ping) | **GET** /ping | ping
 
 
 ## Documentation for Models

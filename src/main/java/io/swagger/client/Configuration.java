@@ -31,7 +31,7 @@ public class Configuration {
     final static String KEY_SECRET = "<<INSERT KEY_SECRET>>";
     final static String API_KEY = "<<INSET API KEY>>";
 
-    private static ApiClient defaultApiClient = initApiClient();
+    private static ApiClient GolfbertApiClient = initApiClient();
 
     private static ApiClient initApiClient() {
         ApiClient ap = new ApiClient();
@@ -51,8 +51,8 @@ public class Configuration {
      *
      * @return Default API client
      */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+    public static ApiClient getGolfbertApiClient() {
+        return GolfbertApiClient;
     }
 
     /**
@@ -61,7 +61,7 @@ public class Configuration {
      *
      * @param apiClient API client
      */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
+    public static void setGolfbertApiClient(ApiClient apiClient) {
+        GolfbertApiClient = apiClient;
     }
 }
