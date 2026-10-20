@@ -1,0 +1,61 @@
+name: Work item
+description: A task, bug or feature. Fill in the Agent Brief if an agent should pick it up.
+labels: ["needs-brief"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What needs to happen and why it matters, in a few sentences.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Agent Brief
+        Optional. Fill this in when an agent should be able to pick the item up with no one to ask. An agent works only from this section and the links in it, so a vague brief fails quietly.
+        When it is complete, replace the `needs-brief` label with `agent-ready`. An agent claims the item by adding `agent-working`. If it stops, it adds `agent-blocked` and comments why.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What is true when this is done, in one or two sentences.
+  - type: textarea
+    id: done_when
+    attributes:
+      label: Done when
+      description: Checks that can pass or fail, such as a test, a command's output, or a count reaching zero. A duration is not a finish condition.
+      value: |
+        - PR is open, CI is green, no conflicts
+        - The PR body lists what the reviewer does after merge
+  - type: textarea
+    id: read_first
+    attributes:
+      label: Read first
+      description: Numbered list. The nearest existing pattern, sample payloads, the relevant decision notes, related issues.
+  - type: textarea
+    id: allowed
+    attributes:
+      label: Allowed without asking
+      description: What the agent may do on its own.
+      value: |
+        - Commit and open one pull request off the default branch
+  - type: textarea
+    id: do_not
+    attributes:
+      label: Do not
+      description: Limits. The default is code only.
+      value: |
+        - Touch production data, production config, cloud resources or any deploy
+        - Add secrets. Name them in the PR for a person to set.
+        - Change anything beyond this concern
+  - type: textarea
+    id: stop
+    attributes:
+      label: Stop and ask
+      description: Situations where the agent writes the question in a comment instead of guessing. Include "stuck after a few attempts at the same check".
+  - type: textarea
+    id: verify_on
+    attributes:
+      label: Verify on
+      description: The real surface to prove the change on, such as a URL, a command, or a dashboard.
